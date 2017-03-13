@@ -138,3 +138,10 @@ set mouse=a    " Mouse in all modes
 
 " Better complete options to speed it up
 set complete=.,w,b,u,U
+
+" -------------------
+" Turn Off Swap Files
+" -------------------
+set noswapfile
+set nobackup
+set nowb
