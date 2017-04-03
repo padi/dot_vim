@@ -192,3 +192,26 @@ if has('mac') || has('gui_macvim') || has('gui_mac')
   " directory name (/something/src)
   nnoremap <silent> <leader>yd :let @*=expand("%:p:h")<CR>
 endif
+
+" =========================
+" Mappings Taken From YADR starts below
+" =========================
+
+" ==== NERD tree
+" Open the project tree and expose current file in the nerdtree with Ctrl-\
+" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! OpenNerdTree()
+  if &modifiable && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+  else
+    NERDTreeToggle
+  endif
+endfunction
+nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
+
+" Window Split shortcuts
+nnoremap vv <C-w>v
+" TODO originally ss in YADR
+nnoremap vs <C-w>s
+
+nnoremap // :nohlsearch<CR>
