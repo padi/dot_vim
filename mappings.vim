@@ -215,3 +215,8 @@ nnoremap vv <C-w>v
 nnoremap vs <C-w>s
 
 nnoremap // :nohlsearch<CR>
+
+" janko-m/vim-test
+nnoremap ,tf :TestFile<CR>
+nnoremap ,tn :TestNearest<CR>
+let test#strategy = "neovim"
