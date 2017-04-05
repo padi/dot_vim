@@ -235,3 +235,5 @@ nnoremap ,tf :TestFile<CR>
 nnoremap ,tn :TestNearest<CR>
 let test#strategy = "neovim"
 
+" fzf-vim and fzf
+nnoremap ,r :Files<CR>
