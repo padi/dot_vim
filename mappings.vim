@@ -209,14 +209,29 @@ function! OpenNerdTree()
 endfunction
 nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
 
-" Window Split shortcuts
-nnoremap vv <C-w>v
-" TODO originally ss in YADR
-nnoremap vs <C-w>s
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> vs <C-w>s
+" nnoremap <silent> ss <C-w>s
 
-nnoremap // :nohlsearch<CR>
+" ============================
+" Shortcuts for everyday tasks
+" ============================
+
+" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
+" this is helpful to paste someone the path you're looking at
+nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
+nnoremap <silent> ,cr :let @* = expand("%")<CR>
+nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
+
+"Clear current search highlight by double tapping //
+nmap <silent> // :nohlsearch<CR>
+
 
 " janko-m/vim-test
 nnoremap ,tf :TestFile<CR>
 nnoremap ,tn :TestNearest<CR>
 let test#strategy = "neovim"
+
